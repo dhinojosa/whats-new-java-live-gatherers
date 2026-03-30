@@ -9,8 +9,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
+@SuppressWarnings("preview")
 public class LazyMapTest {
-    @SuppressWarnings("preview")
     @Test
     void testStableMap() {
         Map<Planet, PlanetData> planetMap = Map.ofLazy
