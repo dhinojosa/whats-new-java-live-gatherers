@@ -1,6 +1,6 @@
 package com.evolutionnext.lazyconstant;
 
-enum Planet {
+public enum Planet {
     MERCURY,
     VENUS,
     EARTH,

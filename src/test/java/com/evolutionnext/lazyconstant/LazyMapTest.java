@@ -12,6 +12,13 @@ import java.util.stream.Stream;
 
 @SuppressWarnings("preview")
 public class LazyMapTest {
+
+    @Test
+    void testLazyMapCallingNothing() {
+        Map.ofLazy
+            (EnumSet.allOf(Planet.class), PlanetLoader::load);
+    }
+
     @Test
     void testStableMap() {
         Map<Planet, PlanetData> planetMap = Map.ofLazy
@@ -20,9 +27,8 @@ public class LazyMapTest {
         PlanetData planetData = planetMap.get(Planet.EARTH);
         Assertions.assertThat(planetData.moons()).isOne();
 
-        System.out.println(planetMap);
-
         PlanetData planetData2 = planetMap.get(Planet.EARTH);
+        Assertions.assertThat(planetData.moons()).isOne();
     }
 
     @Test
@@ -44,5 +50,12 @@ public class LazyMapTest {
 
         System.out.printf("All Planet Colors: %s%n", allPlanetColors);
         System.out.printf("Zero Moons Planets: %s%n", zeroMoonsPlanetsSet);
+    }
+
+    @Test
+    void testCarefulWithPrintln() {
+        Map<Planet, PlanetData> planetMap = Map.ofLazy
+            (EnumSet.allOf(Planet.class), PlanetLoader::load);
+        IO.println(planetMap);
     }
 }
