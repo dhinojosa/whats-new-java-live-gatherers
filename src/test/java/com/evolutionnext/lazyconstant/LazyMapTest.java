@@ -28,7 +28,7 @@ public class LazyMapTest {
         Assertions.assertThat(planetData.moons()).isOne();
 
         PlanetData planetData2 = planetMap.get(Planet.EARTH);
-        Assertions.assertThat(planetData.moons()).isOne();
+        Assertions.assertThat(planetData2.moons()).isOne();
     }
 
     @Test
