@@ -14,7 +14,7 @@ USER root
 # Download and install OpenJDK 25
 RUN curl -L -o openjdk-26_linux-x64_bin.tar.gz https://download.java.net/java/GA/jdk26/c3cc523845074aa0af4f5e1e1ed4151d/35/GPL/openjdk-26_linux-x64_bin.tar.gz \
     && tar -xzf openjdk-26_linux-x64_bin.tar.gz -C /usr/local/ \
-    && rm openjdk-25_linux-x64_bin.tar.gz \
+    && rm openjdk-26_linux-x64_bin.tar.gz \
     && mv /usr/local/jdk-26 /usr/local/openjdk-26
 
 # Set JAVA_HOME environment variable
